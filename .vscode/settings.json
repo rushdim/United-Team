@@ -1,10 +1,4 @@
 {
+    
     "liveServer.settings.port": 5501
 }
-...
-    "assets": [
-        "src/favicon.ico",
-        "src/assets",
-        "src/_redirects"
-    ],
-...
