@@ -1,0 +1,139 @@
+/* --- Past Players Page Styling --- */
+
+#Past-players h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--gold); /* Using your logo gold */
+    margin: 40px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.past-players-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Space between rows */
+}
+
+.past-players-table th {
+    background-color: var(--uniform-blue);
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-bottom: 3px solid var(--uniform-pink);
+}
+
+.past-players-table tr {
+    background-color: #1a1a1a; /* Dark row color */
+    transition: 0.3s;
+}
+
+.past-players-table tr:hover {
+    background-color: #222;
+    transform: scale(1.02);
+}
+
+.past-players-table td {
+    padding: 10px 20px;
+    color: white;
+    font-weight: 700;
+    border-bottom: 1px solid #333;
+}
+
+/* --- The Avatar Photo Style --- */
+.player-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover;
+    border: 2px solid var(--uniform-pink); /* Pink uniform border */
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .past-players-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .player-avatar {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
+/* --- Header & Team Colors --- */
+:root {
+    --uniform-blue: #004d98;
+    --uniform-pink: #ff007f;
+    --logo-gold: #edbb00;
+}
+
+#Past-players h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--logo-gold);
+    margin: 40px 0;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Table Styling --- */
+.past-players-table {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+}
+
+.past-players-table th {
+    background-color: var(--uniform-blue);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--uniform-pink);
+}
+
+.past-players-table tr {
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease;
+}
+
+.past-players-table tr:hover {
+    background-color: #222;
+    transform: scale(1.02);
+}
+
+.past-players-table td {
+    padding: 10px 20px;
+    color: white;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+/* --- Circular Avatar Photo Style --- */
+.player-avatar {
+    width: 65px;  /* Match height and width for circle */
+    height: 65px;
+    border-radius: 50%; /* Create circle effect */
+    object-fit: cover; /* Prevent stretching */
+    border: 3px solid var(--uniform-pink); /* Pink glow border */
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    display: block;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #000;
+    color: #666;
+    border-top: 2px solid var(--uniform-blue);
+}
+

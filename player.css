@@ -1,0 +1,162 @@
+@import url('https://googleapis.com');
+
+:root {
+    --logo-red: #cc0000;
+    --logo-gold: #edbb00;
+    --uniform-blue: #004d98;  /* Deep Professional Blue */
+    --uniform-pink: #ff007f;  /* Vibrant Electric Pink */
+    --bg-dark: #050505;
+    --card-bg: #111111;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: white;
+    margin: 0;
+}
+
+/* Header & Nav */
+header {
+    background: linear-gradient(135deg, #000 0%, var(--uniform-blue) 100%);
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 4px solid var(--uniform-pink);
+}
+
+.logo {
+    width: 150px;
+    filter: drop-shadow(0 0 10px var(--logo-red));
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--uniform-pink);
+    text-shadow: 0 0 8px var(--uniform-pink);
+}
+
+/* Player Gallery Grid */
+.player-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Player Card - Blue and Pink Relationship */
+.player-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #222;
+    transition: all 0.4s ease;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+/* Pink glow on hover */
+.player-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--uniform-pink);
+    box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+}
+
+/* Top bar on card alternates Blue/Pink or uses both */
+.player-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--uniform-blue), var(--uniform-pink));
+}
+
+.player-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: 0.4s;
+}
+
+.player-card:hover .player-photo {
+    filter: grayscale(0%);
+}
+
+.player-card h3 {
+    margin: 15px 0 5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--logo-gold); /* Gold from logo for names */
+}
+
+.player-card p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #bbb;
+    text-transform: uppercase;
+}
+
+/* Special styling for Captains */
+.player-card p:last-of-type:contains('Captain') {
+    color: var(--uniform-pink);
+    font-size: 0.7rem;
+    margin-top: 5px;
+}
+
+/* Big Team Photos at bottom */
+section#players > img {
+    display: block;
+    margin: 40px auto;
+    border-radius: 10px;
+    border: 2px solid var(--uniform-blue);
+    box-shadow: 0 0 20px rgba(0, 77, 152, 0.5);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-top: 40px;
+    background: linear-gradient(to right, var(--uniform-blue), var(--uniform-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer {
+    text-align: center;
+    padding: 50px;
+    background: #000;
+    border-top: 2px solid var(--uniform-blue);
+    color: #666;
+}
