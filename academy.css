@@ -79,10 +79,52 @@ section > img {
     box-shadow: 0 0 20px rgba(0, 77, 152, 0.5);
 }
 
-/* Responsive adjustment for small screens */
-@media (max-width: 600px) {
-    .player-gallery {
-        grid-template-columns: 1fr 1fr; /* Two columns on mobile */
+/* --- UNIVERSAL HORIZONTAL RESPONSIVE NAV --- */
+
+@media (max-width: 768px) {
+    /* Ensure the header text fits small screens */
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    /* Force the Navbar to stay horizontal on ALL phones */
+    nav ul {
+        display: flex;              /* Keeps items in a row */
+        flex-direction: row !important; /* Forces row layout */
+        justify-content: flex-start; /* Aligns links to the left */
+        overflow-x: auto;           /* Allows swiping left/right */
+        white-space: nowrap;        /* Prevents text from breaking into two lines */
+        padding: 5px 10px;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iPhone/iPad */
+        gap: 5px;                   /* Space between items */
+    }
+
+    nav ul li {
+        display: inline-block;      /* Keeps items side-by-side */
+    }
+
+    nav ul li a {
+        padding: 12px 18px;         /* Comfortable tap size */
+        font-size: 0.75rem;         /* Slightly smaller text for mobile */
+        border-bottom: none !important; /* Cleans up the look */
+    }
+
+    /* Hide the scrollbar visual but keep it working (Modern look) */
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+    nav ul {
+        scrollbar-width: none;      /* For Firefox */
+        -ms-overflow-style: none;   /* For IE/Edge */
+    }
+
+    /* Adjust Player/Team Grids for small screens */
+    .player-gallery, .team-info {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 15px;
     }
 }
