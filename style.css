@@ -167,50 +167,60 @@ footer {
 
 /* --- RESPONSIVE DESIGN ADDITIONS --- */
 
+/* --- RESPONSIVE DESIGN ADDITIONS --- */
+
 /* Mobile Phones (Screens smaller than 768px) */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem; /* Shrink title so it doesn't wrap weirdly */
+        font-size: 1.8rem; 
     }
 
     .logo {
-        width: 120px; /* Smaller logo for mobile */
+        width: 100px; 
     }
 
+    /* Keep Navbar Horizontal & Scrollable */
     nav ul {
-        flex-direction: column; /* Stack menu items vertically */
-        text-align: center;
+        flex-direction: row;        /* Force horizontal */
+        justify-content: flex-start; /* Start from left */
+        overflow-x: auto;           /* Enable side-swipe */
+        white-space: nowrap;        /* Prevent text wrapping */
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on iPhones */
     }
 
     nav ul li a {
-        padding: 15px;
-        border-bottom: 1px solid #eee;
+        padding: 15px 20px;
+        font-size: 0.8rem;
+    }
+
+    /* Hide the scrollbar visual but keep it working (Clean look) */
+    nav ul::-webkit-scrollbar {
+        display: none;
     }
 
     .container {
-        margin: 20px auto; /* Less margin on mobile */
+        margin: 20px auto; 
     }
 
+    /* Stack cards in 1 column */
     .team-info {
-        grid-template-columns: 1fr; /* Force cards into 1 single column */
+        grid-template-columns: 1fr; 
     }
 
-    /* Make tables scrollable sideways so they don't break the layout */
+    /* Table scroll for small screens */
     .match-history {
         display: block;
         overflow-x: auto;
-        white-space: nowrap;
     }
 }
 
 /* Tablets (Screens between 769px and 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .team-info {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
     
     header h1 {
         font-size: 2.5rem;
     }
 }
-
