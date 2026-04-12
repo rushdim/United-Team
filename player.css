@@ -212,3 +212,22 @@ footer {
         gap: 15px;
     }
 }
+
+.team-action-photos {
+    width: 100%;
+    max-width: 1100px; /* Limits how big they get on laptops */
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column; /* Stacks them vertically */
+    gap: 20px; /* Space between photos */
+    padding: 0 15px; /* Side padding for mobile */
+}
+
+.team-action-photos img {
+    width: 100%;        /* Makes image take up full width of container */
+    height: auto;       /* Maintains the correct aspect ratio (no stretching) */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 2px solid var(--uniform-blue);
+}
+
