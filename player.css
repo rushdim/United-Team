@@ -163,50 +163,52 @@ footer {
 
 /* --- RESPONSIVE DESIGN ADDITIONS --- */
 
-/* Mobile Phones (Screens smaller than 768px) */
+/* --- UNIVERSAL HORIZONTAL RESPONSIVE NAV --- */
+
 @media (max-width: 768px) {
+    /* Ensure the header text fits small screens */
     header h1 {
-        font-size: 2rem; /* Shrink title so it doesn't wrap weirdly */
+        font-size: 1.8rem;
     }
 
     .logo {
-        width: 120px; /* Smaller logo for mobile */
+        width: 100px;
     }
 
+    /* Force the Navbar to stay horizontal on ALL phones */
     nav ul {
-        flex-direction: column; /* Stack menu items vertically */
-        text-align: center;
+        display: flex;              /* Keeps items in a row */
+        flex-direction: row !important; /* Forces row layout */
+        justify-content: flex-start; /* Aligns links to the left */
+        overflow-x: auto;           /* Allows swiping left/right */
+        white-space: nowrap;        /* Prevents text from breaking into two lines */
+        padding: 5px 10px;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iPhone/iPad */
+        gap: 5px;                   /* Space between items */
+    }
+
+    nav ul li {
+        display: inline-block;      /* Keeps items side-by-side */
     }
 
     nav ul li a {
-        padding: 15px;
-        border-bottom: 1px solid #eee;
+        padding: 12px 18px;         /* Comfortable tap size */
+        font-size: 0.75rem;         /* Slightly smaller text for mobile */
+        border-bottom: none !important; /* Cleans up the look */
     }
 
-    .container {
-        margin: 20px auto; /* Less margin on mobile */
+    /* Hide the scrollbar visual but keep it working (Modern look) */
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+    nav ul {
+        scrollbar-width: none;      /* For Firefox */
+        -ms-overflow-style: none;   /* For IE/Edge */
     }
 
-    .team-info {
-        grid-template-columns: 1fr; /* Force cards into 1 single column */
-    }
-
-    /* Make tables scrollable sideways so they don't break the layout */
-    .match-history {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+    /* Adjust Player/Team Grids for small screens */
+    .player-gallery, .team-info {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
     }
 }
-
-/* Tablets (Screens between 769px and 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .team-info {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-    }
-    
-    header h1 {
-        font-size: 2.5rem;
-    }
-}
-
